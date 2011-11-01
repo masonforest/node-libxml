@@ -1,5 +1,11 @@
 #!/bin/bash
 
 cd `dirname $0`
-support/o3/tools/node_modules_build
-cp support/o3/build/default/o3.node lib/libxml
+cd support/o3
+
+rm -rf build/ || true
+node tools/gluegen.js
+node-waf -vv configure
+node-waf -vv
+
+cp build/default/o3.node ../../lib/libxml
