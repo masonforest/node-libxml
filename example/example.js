@@ -1,6 +1,5 @@
-var xml = require("../lib/libxml"),
-	doc,
-	xmlData = "\
+var xml = require("../lib/libxml");
+var xmlData = "\
 <?xml version=\"1.0\"?>\n\
 <catalog>\n\
    <book id=\"bk101\" available=\"true\">\n\
@@ -24,30 +23,31 @@ var xml = require("../lib/libxml"),
    </book>\n\
 </catalog>";
 
-doc = xml.parseFromString(xmlData);
+var doc = xml.parseFromString(xmlData);
 console.log("-parsed document:\n" + doc.xml);
+
 console.log("\n-traversing document element:");
-var elem = doc.documentElement,
-childNodes = elem.childNodes;
+var elem = doc.documentElement;
+var childNodes = elem.childNodes;
+
 for (var i=0; i<childNodes.length; i++) {
-	console.log("name of child " + i + ": " 
-		+ childNodes[i].nodeName);
-	console.log("type of child " + i + ": " 
-		+ childNodes[i].nodeName);	
+    console.log("name of child " + i + ": " 
+        + childNodes[i].nodeName);
+    console.log("type of child " + i + ": " 
+        + childNodes[i].nodeName);  
 }
 
-console.log("\n-attributes on first child of the document element:");		
-var child = elem.firstChild.nextSibling,
-attributes = child.attributes;
+console.log("\n-attributes on first child of the document element:");       
+var child = elem.firstChild.nextSibling;
+var attributes = child.attributes;
+
 console.log(child.nodeName);
 for (var i=0; i<attributes.length; i++) {
-	console.log("attribute " + i + ": " 
-		+ attributes[i].name + " = " 
-		+ attributes[i].value);
+    console.log("attribute " + i + ": " 
+        + attributes[i].name + " = " 
+        + attributes[i].value);
 }
 
 console.log("\n-xpath query:");
-var xpathNodeList = elem.selectNodes(
-	"descendant-or-self::node()[@available='true']");
-console.log("first element of the xpath querry: " 
-	+ xpathNodeList[0].getAttribute("id"));
+var xpathNodeList = elem.selectNodes("descendant-or-self::node()[@available='true']");
+console.log("first element of the xpath querry: " + xpathNodeList[0].getAttribute("id"));
