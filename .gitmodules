@@ -1,0 +1,3 @@
+[submodule "support/o3"]
+	path = support/o3
+	url = git://github.com/ajaxorg/o3.git
