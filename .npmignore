@@ -1,5 +1,6 @@
 lib/libxml/o3.node
 libxml*.tgz
+package/
 
 support/o3/build/
 
