@@ -1,6 +1,6 @@
 {
   "name" : "libxml",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "description" : "libxml2 wrapper for node.js",
   "author": "ajax.org B.V. <info@ajax.org>",
   "contributors": [
