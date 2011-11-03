@@ -15,7 +15,8 @@
   },
   "main": "./lib/libxml",
   "scripts" : {
-    "preinstall" : "./build.sh"
+    "preinstall" : "./build.sh",
+    "test": "node ./test.js"
   },
   "engines" : {
      "node" : ">= 0.4.0"
