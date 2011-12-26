@@ -8,4 +8,4 @@ node tools/gluegen.js
 node-waf -vv configure
 node-waf -vv
 
-cp build/default/o3.node ../../lib/libxml
+cp build/Release/o3.node ../../lib/libxml
